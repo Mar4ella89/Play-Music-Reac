@@ -13,5 +13,5 @@ export const App = () => {
     </div>
   );
 
-  return <>{product}</>;
+  return product;
 };
