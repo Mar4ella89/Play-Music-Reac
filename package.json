@@ -1,8 +1,8 @@
 {
-  "name": "play-music-react",
+  "name": "react-examples",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Mar4ella89.github.io/play-music-react/",
+  "homepage": "https://Mar4ella89.github.io/react-examples/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
