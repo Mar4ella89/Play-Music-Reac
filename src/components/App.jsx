@@ -14,5 +14,6 @@ export const App = () => (
       name="Fries and Burger"
       price={14.29}
     />
+    <Product name="Hot Dog" price={8.21} />
   </div>
 );
