@@ -2,19 +2,47 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import css from './Product.module.css';
+import { nanoid } from 'nanoid';
 
-const Product = ({
-  name,
-  imgUrl = 'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
-  price,
-}) => {
+// const Product = ({
+//   name,
+//   imgUrl = 'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
+//   price,
+//   quantity,
+// }) => {
+//   return (
+//     <div className={css.card}>
+//       <img src={imgUrl} alt={name} width="640" />
+//       <h2>{name}</h2>
+//       <p>Price: {price}$</p>
+//       <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
+//       <button type="button">Add to cart</button>
+//     </div>
+//   );
+// };
+
+const Product = ({ allFood }) => {
   return (
-    <div className={css.card}>
-      <img src={imgUrl} alt={name} width="640" />
-      <h2>{name}</h2>
-      <p>Price: {price}$</p>
-      <button type="button">Add to cart</button>
-    </div>
+    <ul>
+      {allFood.map(
+        ({
+          imgUrl = 'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
+          name,
+          price,
+          quantity,
+        }) => (
+          <li key={nanoid()}>
+            <div className={css.card}>
+              <img src={imgUrl} alt={name} width="640" />
+              <h2>{name}</h2>
+              <p>Price: {price}$</p>
+              <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
+              <button type="button">Add to cart</button>
+            </div>
+          </li>
+        )
+      )}
+    </ul>
   );
 };
 
