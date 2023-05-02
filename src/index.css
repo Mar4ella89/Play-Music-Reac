@@ -22,7 +22,6 @@ h5,
 h6,
 p {
   margin: 0;
-  padding: 0;
 }
 
 ul,
@@ -35,7 +34,7 @@ ol {
 img {
   display: block;
   max-width: 100%;
-  /* width: 100%; */
+  height: auto;
 }
 
 a {
