@@ -17,9 +17,9 @@ const allFood = [
     quantity: 29,
   },
   { name: 'Hot Dog', price: 8.21, quantity: 8 },
-  { name: 'Hot Dog', price: 9.32, quantity: 5 },
-  { name: 'Hot Dog', price: 5.28, quantity: 10 },
-  { name: 'Hot Dog', price: 3.11, quantity: 18 },
+  { name: 'Hot Chicken', price: 9.32, quantity: 5 },
+  { name: 'Fries', price: 5.28, quantity: 10 },
+  { name: 'Cola', price: 3.11, quantity: 18 },
 ];
 
 export const App = () => (

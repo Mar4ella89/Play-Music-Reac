@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 
 const Product = ({ allFood }) => {
   return (
-    <ul>
+    <ul className={css.cardWrapper}>
       {allFood.map(
         ({
           imgUrl = 'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
@@ -14,13 +14,17 @@ const Product = ({ allFood }) => {
           price,
           quantity,
         }) => (
-          <li key={nanoid()}>
-            <div className={css.card}>
-              <img src={imgUrl} alt={name} width="640" />
-              <h2>{name}</h2>
-              <p>Price: {price}$</p>
-              <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
-              <button type="button">Add to cart</button>
+          <li key={nanoid()} className={css.card}>
+            <div>
+              <div className={css.imgWrapper}>
+                <img src={imgUrl} alt={name} width="640" className={css.img} />
+              </div>
+              <div>
+                <h2>{name}</h2>
+                <p>Price: {price}$</p>
+                <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
+                <button type="button">Add to cart</button>
+              </div>
             </div>
           </li>
         )
