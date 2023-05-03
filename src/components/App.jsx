@@ -1,4 +1,5 @@
 import Product from './Product';
+import Section from './Section/Section';
 import css from './App.module.css';
 
 const allFood = [
@@ -28,5 +29,7 @@ export const App = () => (
   <div className={css.container}>
     <h1>Best selling products</h1>
     <Product allFood={allFood} />
+    <Section title={'TOP 3'} />
+    <Section />
   </div>
 );

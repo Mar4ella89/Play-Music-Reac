@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import css from './Product.module.css';
-import { nanoid } from 'nanoid';
 
 const defaultImage =
   'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder';
