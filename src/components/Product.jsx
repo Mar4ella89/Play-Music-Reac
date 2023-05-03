@@ -33,8 +33,6 @@ const Product = ({ allFood }) => {
   );
 };
 
-export default Product;
-
 Product.propTypes = {
   allFood: PropTypes.arrayOf(
     PropTypes.exact({
@@ -45,3 +43,5 @@ Product.propTypes = {
     })
   ),
 };
+
+export default Product;
