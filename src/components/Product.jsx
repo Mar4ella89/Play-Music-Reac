@@ -10,8 +10,8 @@ const defaultImage =
 const Product = ({ allFood }) => {
   return (
     <ul className={css.cardWrapper}>
-      {allFood.map(({ imgUrl = defaultImage, name, price, quantity }) => (
-        <li key={nanoid()} className={css.card}>
+      {allFood.map(({ imgUrl = defaultImage, name, price, quantity, id }) => (
+        <li key={id} className={css.card}>
           <div>
             <div className={css.imgWrapper}>
               <img
@@ -41,6 +41,7 @@ Product.propTypes = {
       imgUrl: PropTypes.string,
       price: PropTypes.number.isRequired,
       quantity: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
     })
   ),
 };
