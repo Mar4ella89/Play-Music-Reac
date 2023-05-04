@@ -20,7 +20,7 @@ const Product = ({ allFood }) => {
                 className={css.img}
               />
             </div>
-            <div>
+            <div className={css.details}>
               <h2>{name}</h2>
               <p>Price: {price}$</p>
               <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
