@@ -1,4 +1,4 @@
-import Product from './Product';
+import Product from './Products/Product';
 import Section from './Section/Section';
 import css from './App.module.css';
 
