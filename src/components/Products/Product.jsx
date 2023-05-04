@@ -35,7 +35,7 @@ const Product = ({ allFood }) => {
 
 Product.propTypes = {
   allFood: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       name: PropTypes.string.isRequired,
       imgUrl: PropTypes.string,
       price: PropTypes.number.isRequired,
