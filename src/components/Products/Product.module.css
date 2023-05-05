@@ -1,7 +1,13 @@
 .cardWrapper {
+   
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(425px, auto));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+/* 
+    display: flex;
+    flex-wrap: wrap; */
+    margin: 0 auto;
+        
      }
 
 .card { 
@@ -12,12 +18,14 @@
 }
 
 .imgWrapper {
-    min-height: 358px;
+    
     border-bottom: 1px solid #ec9200;
 }
 
 .img {
-    margin: auto 0;
+    height: 230px;
+    min-width: 410px;
+    margin: 0 auto;
 }
 
 .details {

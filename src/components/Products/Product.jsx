@@ -16,7 +16,8 @@ const Product = ({ allFood }) => {
               <img
                 src={imgUrl ?? defaultImage}
                 alt={name}
-                width="640"
+                width="300"
+                height="170"
                 className={css.img}
               />
             </div>

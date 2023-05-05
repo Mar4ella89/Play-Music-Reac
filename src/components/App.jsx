@@ -31,5 +31,6 @@ export const App = () => (
     <Product allFood={allFood} />
     <Section title={'TOP 3'} />
     <Section />
+    <Section title={'NEW 3'} />
   </div>
 );
