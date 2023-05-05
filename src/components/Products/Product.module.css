@@ -1,11 +1,8 @@
 .cardWrapper {
    
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(410px, auto));
     gap: 10px;
-/* 
-    display: flex;
-    flex-wrap: wrap; */
     margin: 0 auto;
         
      }
