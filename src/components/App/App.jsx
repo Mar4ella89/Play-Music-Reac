@@ -16,6 +16,7 @@ export const App = () => (
       <Section title={'TOP 3'} />
       <Section />
       <Section title={'NEW 3'} />
+      <Section title={'HOT 3'} />
     </div>
     <PageTitle text="24th Core Worlds Coalition Conference" />
     <EventBoard events={upcomingEvents} />
