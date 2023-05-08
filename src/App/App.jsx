@@ -1,11 +1,11 @@
-import Product from '../Products/Product';
-import Section from '../Section/Section';
+import Product from '../Products-example-1/components/Products/Product';
+import Section from '../Products-example-1/components/Section/Section';
 import css from './App.module.css';
 
-import { PageTitle } from 'components/PageTitle/PageTitle';
-import { EventBoard } from 'components/EventBoard/EventBoard';
-import upcomingEvents from '../../upcoming-events.json';
-import productsList from '../../products';
+import { PageTitle } from 'EventBoard-example-2/components/PageTitle/PageTitle';
+import { EventBoard } from 'EventBoard-example-2/components/EventBoard/EventBoard';
+import upcomingEvents from 'EventBoard-example-2/upcoming-events.json';
+import productsList from 'Products-example-1/products.json';
 import { Container } from './App.styled';
 
 export const App = () => (

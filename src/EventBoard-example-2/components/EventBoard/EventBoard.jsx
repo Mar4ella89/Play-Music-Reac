@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Event } from 'components/Event/Event';
+import { Event } from 'EventBoard-example-2/components/Event/Event';
 import { Board } from './EventBoard.styled';
 
 export const EventBoard = ({ events }) => {
