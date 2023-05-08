@@ -5,6 +5,11 @@ export const Card = styled.div`
   border: ${props => `2px dashed ${props.theme.colors.black}`};
   padding: ${props => props.theme.spacing(4)};
   border-radius: 4px;
+
+  :hover,
+  :focus {
+    background-color: #dddddd;
+  }
 `;
 
 export const EventName = styled.h2`
@@ -26,6 +31,7 @@ export const Info = styled.p`
   line-height: 24px;
   font-weight: 400;
   letter-spacing: 0.25px;
+
   svg {
     display: block;
     margin-right: 8px;
