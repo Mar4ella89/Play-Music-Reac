@@ -7,10 +7,7 @@ export class Counter extends Component {
     return (
       <>
         <Toggle>
-          <CounterLogik
-          // initialValue={this.props.initialValue}
-          // step={this.props.step}
-          />
+          <CounterLogik initialValue={10} />
         </Toggle>
       </>
     );

@@ -6,7 +6,7 @@ export class CounterLogik extends Component {
     initialValue: 0,
   };
   state = {
-    value: this.props,
+    value: this.props.initialValue,
   };
 
   constructor() {
