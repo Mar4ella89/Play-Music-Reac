@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 export class CounterLogik extends Component {
+  static defaultProps = {
+    step: 1,
+    initialValue: 0,
+  };
+  state = {
+    value: this.props,
+  };
+
   constructor() {
     super();
     this.handleIncrement = this.handleIncrement.bind(this);
@@ -8,6 +16,7 @@ export class CounterLogik extends Component {
   }
 
   handleIncrement(evt) {
+    this.setState((state, props) => ({ value: state.value + props.step }));
     console.log(evt);
     console.log(this.props);
   }
