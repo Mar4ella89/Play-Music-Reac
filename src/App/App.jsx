@@ -21,6 +21,6 @@ export const App = () => (
     </div>
     <PageTitle text="24th Core Worlds Coalition Conference" />
     <EventBoard events={upcomingEvents} />
-    <Counter step={5} />
+    <Counter />
   </Container>
 );
