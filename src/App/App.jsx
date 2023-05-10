@@ -3,7 +3,7 @@ import Section from '../Products-example-1/components/Section/Section';
 import css from './App.module.css';
 
 import { PageTitle } from 'EventBoard-example-2/components/PageTitle/PageTitle';
-import { EventBoard } from 'EventBoard-example-2/components/EventBoard/EventBoard';
+import EventBoard from 'EventBoard-example-2/components/EventBoard';
 import upcomingEvents from 'EventBoard-example-2/upcoming-events.json';
 import productsList from 'Products-example-1/products.json';
 import { Container } from './App.styled';

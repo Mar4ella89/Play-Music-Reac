@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Event } from 'EventBoard-example-2/components/Event/Event';
 import { Board } from './EventBoard.styled';
 
-export const EventBoard = ({ events }) => {
+const EventBoard = ({ events }) => {
   return (
     <Board>
       {events.map(({ name, location, speaker, type, time }) => (
@@ -34,3 +34,5 @@ EventBoard.propTypes = {
     })
   ),
 };
+
+export default EventBoard;
