@@ -22,11 +22,17 @@ class SignUpFormFull extends Component {
 
   // Вызывается при отправке формы
   handleSubmit = evt => {
+    const { login, email, password } = this.state;
     evt.preventDefault();
-    console.log(`Signed up as: ${this.state.login}`);
+    console.log(`Login: ${login}, Email: ${email}, Password: ${password}`);
 
     // Проп который передается форме для вызова при сабмите
     this.props.onSubmit({ ...this.state });
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ ...INITIAL_STATE });
   };
 
   render() {
