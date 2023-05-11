@@ -8,6 +8,7 @@ import upcomingEvents from 'EventBoard-example-2/upcoming-events.json';
 import productsList from 'Products-example-1/products.json';
 import { Container } from './App.styled';
 import { Counter } from 'Counter-example-3/components/Counter';
+import SignUpForm from 'Form-example-4/SignUpForm';
 
 export const App = () => (
   <Container>
@@ -22,5 +23,6 @@ export const App = () => (
     <PageTitle text="24th Core Worlds Coalition Conference" />
     <EventBoard events={upcomingEvents} />
     <Counter />
+    <SignUpForm />
   </Container>
 );
