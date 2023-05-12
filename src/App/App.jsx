@@ -9,6 +9,7 @@ import productsList from 'Products-example-1/products.json';
 import { Container } from './App.styled';
 import { Counter } from 'Counter-example-3/components/Counter';
 import SignUpForm from 'Form-example-4/SignUpForm';
+import NewsApi from 'API-example-5/components/NewsApi';
 
 export const App = () => (
   <Container>
@@ -24,5 +25,6 @@ export const App = () => (
     <EventBoard events={upcomingEvents} />
     <Counter />
     <SignUpForm />
+    <NewsApi />
   </Container>
 );
