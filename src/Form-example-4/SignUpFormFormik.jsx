@@ -5,10 +5,15 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import styled from '@emotion/styled';
 
+const gender = ['female', 'male'];
+const age = ['18-25', '26-35', '36+'];
+
 const userSchema = yup.object().shape({
   login: yup.string().required(),
-  email: yup.string().email(),
+  email: yup.string().email().required(),
   password: yup.string().min(6).max(32).required(),
+  gender: yup.string().oneOf(gender).required('Please enter your gender'),
+  age: yup.string().oneOf(age).required('Please enter your age'),
 });
 
 const initialValues = {
@@ -21,11 +26,6 @@ const initialValues = {
 };
 
 const SignUpFormFormik = () => {
-  // const Gender = {
-  //   MALE: 'male',
-  //   FEMALE: 'female',
-  // };
-
   // Использование styled components с Formik
 
   const Input = styled(Field)`
@@ -52,7 +52,7 @@ const SignUpFormFormik = () => {
             name="login"
             // value={login}
           />
-          <ErrorMessage name="login" />
+          <ErrorMessage name="login" component="div" />
         </label>
         <label>
           Email
@@ -62,7 +62,7 @@ const SignUpFormFormik = () => {
             name="email"
             // value={email}
           />
-          <ErrorMessage name="email" />
+          <ErrorMessage name="email" component="div" />
         </label>
         <label>
           Password
@@ -72,7 +72,7 @@ const SignUpFormFormik = () => {
             name="password"
             // value={password}
           />
-          <ErrorMessage name="password" />
+          <ErrorMessage name="password" component="div" />
         </label>
         <label>
           Agree to terms
@@ -89,18 +89,18 @@ const SignUpFormFormik = () => {
             Male
             <Field
               type="radio"
-              // checked={gender === Gender.MALE}
+              checked={gender === 'Gender.male'}
               name="gender"
-              // value={Gender.MALE}
+              value="male"
             />
           </label>
           <label>
             Female
             <Field
               type="radio"
-              // checked={gender === Gender.FEMALE}
+              checked={gender === 'female'}
               name="gender"
-              // value={Gender.FEMALE}
+              value="female"
             />
           </label>
         </section>
@@ -113,11 +113,16 @@ const SignUpFormFormik = () => {
             // value={initialValues.age}
           >
             <option value="" disabled>
-              ...
+              Select your age
             </option>
-            <option value="18-25">18-25</option>
+            {age.map((item, index) => (
+              <option value={item} key={index}>
+                {item}
+              </option>
+            ))}
+            {/* <option value="18-25">18-25</option>
             <option value="26-35">26-35</option>
-            <option value="36+">36+</option>
+            <option value="36+">36+</option> */}
           </Input>
         </label>
 
