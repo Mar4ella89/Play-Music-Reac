@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import api from './services/api';
+import ArticleList from './ArticleList';
 
 axios.defaults.baseURL = 'https://hn.algolia.com/api/v1';
-
-const ArticleList = ({ articles }) => (
-  <ul>
-    {articles.map(({ objectID, url, title }) => (
-      <li key={objectID}>
-        <a href={url} target="_blank" rel="noreferrer noopener">
-          {title}
-        </a>
-      </li>
-    ))}
-  </ul>
-);
 
 class NewsApi extends Component {
   state = {
@@ -26,14 +16,25 @@ class NewsApi extends Component {
     this.setState({ isLoading: true });
 
     try {
-      const response = await axios.get('/search?query=react');
-      this.setState({ articles: response.data.hits });
+      const articles = await api.fetchArticlesWithQuery('react');
+      console.dir(articles);
+      this.setState({ articles });
     } catch (error) {
       this.setState({ error });
     } finally {
       this.setState({ isLoading: false });
     }
   }
+
+  //     try {
+  //       const articles = api.fetchArticlesWithQuery('react');
+  //       this.setState({ articles });
+  //     } catch (error) {
+  //       this.setState({ error });
+  //     } finally {
+  //       this.setState({ isLoading: false });
+  //     }
+  //   }
 
   render() {
     const { articles, isLoading, error } = this.state;
