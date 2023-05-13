@@ -18,18 +18,31 @@ const ArticleList = ({ articles }) => (
 class NewsApi extends Component {
   state = {
     articles: [],
+    isLoading: false,
+    error: null,
   };
 
   async componentDidMount() {
-    const response = await axios.get('/search?query=react');
-    this.setState({ articles: response.data.hits });
+    this.setState({ isLoading: true });
+
+    try {
+      const response = await axios.get('/search?query=react');
+      this.setState({ articles: response.data.hits });
+    } catch (error) {
+      this.setState({ error });
+    } finally {
+      this.setState({ isLoading: false });
+    }
   }
 
   render() {
-    const { articles } = this.state;
+    const { articles, isLoading, error } = this.state;
     return (
       <div>
-        (articles.length > 0) ? <ArticleList articles={articles} /> : null
+        <h1>News API</h1>
+        {error && <p>Whoops, something went wrong: {error.message}</p>}
+        {isLoading && <p>Loading...</p>}
+        {articles.length > 0 && <ArticleList articles={articles} />}
       </div>
     );
   }
