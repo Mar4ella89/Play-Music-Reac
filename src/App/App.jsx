@@ -13,14 +13,14 @@ import NewsApi from 'API-example-5/components/NewsApi';
 
 export const App = () => (
   <Container>
-    <div className={css.container}>
+    {/* <div className={css.container}>
       <h1>Best selling products</h1>
       <Product allFood={productsList} />
       <Section title={'TOP 3'} />
       <Section />
       <Section title={'NEW 3'} />
       <Section title={'HOT 3'} />
-    </div>
+    </div> */}
     <PageTitle text="24th Core Worlds Coalition Conference" />
     <EventBoard events={upcomingEvents} />
     <Counter />
