@@ -1,0 +1,35 @@
+.wrapper {
+    min-width: 380px;
+    background-color: #5736A3;
+}
+
+.navList {
+    display: flex;
+    gap: 20px;
+    padding: 15px 15px;
+    font-size: 20px;
+    font-weight: 500;
+
+    list-style: none;
+    width: 350px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        width: 768px;
+        padding: 16px 15px;
+    }
+
+    @media screen and (min-width: 1279px) {
+        width: 1280px;
+
+    }
+
+}
+
+.navLink {
+    color: #ffffff;
+}
+
+.navLink:global(.active) {
+    color: #8e88ed
+}
