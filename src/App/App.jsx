@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 
 const Navbar = lazy(() => import('../modules/Navbar/Navbar'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-// const TweetsPage = lazy(() => import('./pages/TweetsPage/TweetsPage'));
+const ExamplesPage = lazy(() => import('../pages/ExamplesPage/ExamplesPage'));
 
 // import Product from '../Products-example-1/components/Products/Product';
 // import Section from '../Products-example-1/components/Section/Section';
@@ -25,7 +25,7 @@ export const App = () => (
     <Routes>
       <Route>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/examples" element={<TweetsPage />} /> */}
+        <Route path="/examples" element={<ExamplesPage />} />
       </Route>
 
       <Route path="*" element={<HomePage />} />

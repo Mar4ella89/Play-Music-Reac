@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@emotion/react';
 import './index.css';
 import { App } from 'App/App';
-import { theme } from './EventBoard-example-2/constants';
+import { theme } from './AllExamples/EventBoard-example-2/constants';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
