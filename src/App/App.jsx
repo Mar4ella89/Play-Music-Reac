@@ -4,6 +4,9 @@ import { lazy, Suspense } from 'react';
 const Navbar = lazy(() => import('../modules/Navbar/Navbar'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const ExamplesPage = lazy(() => import('../pages/ExamplesPage/ExamplesPage'));
+const Product = lazy(() =>
+  import('AllExamples/Products-example-1/components/Products/Product')
+);
 
 // import Product from '../Products-example-1/components/Products/Product';
 // import Section from '../Products-example-1/components/Section/Section';
@@ -26,6 +29,9 @@ export const App = () => (
       <Route>
         <Route path="/" element={<HomePage />} />
         <Route path="/examples" element={<ExamplesPage />} />
+        <Route path="/examples/:" element={<ExamplesPage />}>
+          <Route path="ex1" element={<Product />}></Route>
+        </Route>
       </Route>
 
       <Route path="*" element={<HomePage />} />

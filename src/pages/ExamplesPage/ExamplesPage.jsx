@@ -1,12 +1,21 @@
+import { useNavigate } from 'react-router-dom';
+
 import Container from 'components/Container/Container';
 
 const ExamplesPage = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <aside>
         <nav>
           <ul>
-            <li>Ex-1 Products</li>
+            <li
+              onClick={() => {
+                navigate('/ex1');
+              }}
+            >
+              Ex-1 Products
+            </li>
             <li>Ex-2 Event Board</li>
             <li>Ex-3 Counter</li>
             <li>Ex-4 Form and Formik</li>
