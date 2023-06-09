@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { CounterControls } from './CounterControls';
 
+import css from '../Counter.module.css';
+
 export class CounterLogik extends Component {
   static defaultProps = {
     step: 2,
@@ -39,8 +41,8 @@ export class CounterLogik extends Component {
     const { value } = this.state;
 
     return (
-      <div>
-        <span>{value}</span>
+      <div className={css.counterWrapper}>
+        <span className={css.value}>{value}</span>
         <CounterControls
           onIncrement={this.handleIncrement}
           onDectement={this.handleDecrement}

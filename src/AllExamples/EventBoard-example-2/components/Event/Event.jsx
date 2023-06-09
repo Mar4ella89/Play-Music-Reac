@@ -8,7 +8,7 @@ import {
 import {
   formatEventDuration,
   formatEventStart,
-} from 'EventBoard-example-2/utils';
+} from 'AllExamples/EventBoard-example-2/utils';
 import { iconSize } from '../../constants';
 import { Card, EventName, Info, Chip } from './Event.styled';
 

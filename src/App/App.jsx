@@ -7,6 +7,7 @@ import productsList from '../AllExamples/Products-example-1/products';
 import Container from 'components/Container/Container';
 import upcomingEvents from 'AllExamples/EventBoard-example-2/upcoming-events.json';
 // import upcomingEvents from 'EventBoard-example-2/upcoming-events.json';
+// import EventBoard from 'AllExamples/EventBoard-example-2/components/EventBoard';
 
 const Navbar = lazy(() => import('modules/Navbar/Navbar'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
@@ -14,9 +15,12 @@ const ExamplesPage = lazy(() => import('pages/ExamplesPage/ExamplesPage'));
 const Product = lazy(() =>
   import('AllExamples/Products-example-1/components/Products/Product')
 );
-// const EventBoard = lazy(() =>
-//   import('AllExamples/EventBoard-example-2/components/EventBoard')
-// );
+const EventBoard = lazy(() =>
+  import('AllExamples/EventBoard-example-2/components/EventBoard')
+);
+const Counter = lazy(() =>
+  import('AllExamples/Counter-example-3/components/Counter')
+);
 const Hooks = lazy(() => import('AllExamples/Hook-example-6/Hooks'));
 
 // import Product from '../Products-example-1/components/Products/Product';
@@ -55,12 +59,18 @@ const Example = () => {
             <Product allFood={productsList} />
           </Container>
         );
-      // case 'ex2':
-      //   return (
-      //     <Container>
-      //       <EventBoard events={upcomingEvents} />
-      //     </Container>
-      //   );
+      case 'ex2':
+        return (
+          <Container>
+            <EventBoard events={upcomingEvents} />
+          </Container>
+        );
+      case 'ex3':
+        return (
+          <Container>
+            <Counter />
+          </Container>
+        );
 
       default:
         return null;

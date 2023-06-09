@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+import css from '../Counter.module.css';
+
 export class Toggle extends Component {
   state = { isOpen: false };
 
@@ -17,7 +19,7 @@ export class Toggle extends Component {
         {/* <button onClick={this.show}>Show Counter</button>
         <button onClick={this.hide}>Hide Counter</button> */}
 
-        <button onClick={this.toggle}>
+        <button onClick={this.toggle} className={css.button}>
           {isOpen ? 'Hide Counter' : 'Show Counter'}
         </button>
         {isOpen && children}
