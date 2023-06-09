@@ -5,10 +5,7 @@ import {
   FaCalendarAlt,
   FaClock,
 } from 'react-icons/fa';
-import {
-  formatEventDuration,
-  formatEventStart,
-} from 'EventBoard-example-2/utils';
+import { formatEventDuration, formatEventStart } from '../utils';
 import { iconSize } from '../constants';
 import { Card, EventName, Info, Chip } from './Event.styled';
 
