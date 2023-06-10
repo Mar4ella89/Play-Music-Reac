@@ -4,6 +4,8 @@ import SignUpFormLight from './SignUpFormLight';
 import SignUpFormFull from './SignUpFormFull';
 import SignUpFormFormik from './SignUpFormFormik';
 
+import css from './SignUpForm.module.css';
+
 class SignUpForm extends Component {
   render() {
     return (

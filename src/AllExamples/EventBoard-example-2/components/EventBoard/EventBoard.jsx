@@ -1,22 +1,26 @@
 import PropTypes from 'prop-types';
 import { Event } from 'AllExamples/EventBoard-example-2/components/Event/Event';
 import { Board } from './EventBoard.styled';
+import GoBackButton from 'components/generic/GoBackButton/GoBackButton';
 
 const EventBoard = ({ events }) => {
   return (
-    <Board>
-      {events.map(({ name, location, speaker, type, time }) => (
-        <Event
-          key={name}
-          name={name}
-          location={location}
-          speaker={speaker}
-          type={type}
-          start={time.start}
-          end={time.end}
-        />
-      ))}
-    </Board>
+    <>
+      <GoBackButton path={'/examples'} />
+      <Board>
+        {events.map(({ name, location, speaker, type, time }) => (
+          <Event
+            key={name}
+            name={name}
+            location={location}
+            speaker={speaker}
+            type={type}
+            start={time.start}
+            end={time.end}
+          />
+        ))}
+      </Board>
+    </>
   );
 };
 

@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import styled from '@emotion/styled';
 
+import css from './SignUpForm.module.css';
+
 const gender = ['female', 'male'];
 const age = ['18-25', '26-35', '36+'];
 
@@ -30,6 +32,7 @@ const SignUpFormFormik = () => {
 
   const Input = styled(Field)`
     color: blue;
+    border: 1px solid blue;
   `;
 
   const handleSubmit = (values, { resetForm }) => {
@@ -38,103 +41,115 @@ const SignUpFormFormik = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={userSchema}
-      onSubmit={handleSubmit}
-    >
-      <Form autoComplete="off">
-        <label htmlFor="login">
-          Login
-          <Field
-            type="text"
-            placeholder="Enter login"
-            name="login"
-            // value={login}
-          />
-          <ErrorMessage name="login" component="div" />
-        </label>
-        <label>
-          Email
-          <Field
-            type="text"
-            placeholder="Enter email"
-            name="email"
-            // value={email}
-          />
-          <ErrorMessage name="email" component="div" />
-        </label>
-        <label>
-          Password
-          <Field
-            type="text"
-            placeholder="Enter password"
-            name="password"
-            // value={password}
-          />
-          <ErrorMessage name="password" component="div" />
-        </label>
-        <label>
-          Agree to terms
-          <Field
-            type="checkbox"
-            name="agreed"
-            // checked={agreed}
-          />
-        </label>
+    <>
+      <h2 className={css.title}>Formik form</h2>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={userSchema}
+        onSubmit={handleSubmit}
+      >
+        <Form autoComplete="off" className={css.form}>
+          <div className={css.formFieldWrapper}>
+            <label htmlFor="login" className={css.lable}>
+              <span className={css.fieldName}>Login</span>
+              <Field
+                className={css.field}
+                type="text"
+                placeholder="Enter login"
+                name="login"
+                // value={login}
+              />
+              <ErrorMessage name="login" component="div" />
+            </label>
+          </div>
+          <label className={css.lable}>
+            <span className={css.fieldName}>Email</span>
 
-        <section>
-          <h2>Choose your gender</h2>
-          <label>
-            Male
             <Field
-              type="radio"
-              checked={gender === 'Gender.male'}
-              name="gender"
-              value="male"
+              className={css.field}
+              type="text"
+              placeholder="Enter email"
+              name="email"
+              // value={email}
+            />
+            <ErrorMessage name="email" component="div" />
+          </label>
+          <label className={css.lable}>
+            <span className={css.fieldName}>Password</span>
+
+            <Field
+              className={css.field}
+              type="text"
+              placeholder="Enter password"
+              name="password"
+              // value={password}
+            />
+            <ErrorMessage name="password" component="div" />
+          </label>
+          <label className={css.lable}>
+            <span className={css.fieldName}>Agree to terms</span>
+
+            <Field
+              className={css.field}
+              type="checkbox"
+              name="agreed"
+              // checked={agreed}
             />
           </label>
-          <label>
-            Female
-            <Field
-              type="radio"
-              checked={gender === 'female'}
-              name="gender"
-              value="female"
-            />
-          </label>
-        </section>
 
-        <label>
-          Choose your age
-          <Input
-            as="select"
-            name="age"
-            // value={initialValues.age}
-          >
-            <option value="" disabled>
-              Select your age
-            </option>
-            {age.map((item, index) => (
-              <option value={item} key={index}>
-                {item}
+          <section>
+            <h2>Choose your gender</h2>
+            <label className={css.lable}>
+              Male
+              <Field
+                type="radio"
+                checked={gender === 'Gender.male'}
+                name="gender"
+                value="male"
+              />
+            </label>
+            <label className={css.lable}>
+              Female
+              <Field
+                type="radio"
+                checked={gender === 'female'}
+                name="gender"
+                value="female"
+              />
+            </label>
+          </section>
+
+          <label className={css.lable}>
+            Choose your age
+            <Input
+              as="select"
+              name="age"
+              // value={initialValues.age}
+            >
+              <option value="" disabled>
+                Select your age
               </option>
-            ))}
-            {/* <option value="18-25">18-25</option>
+              {age.map((item, index) => (
+                <option value={item} key={index}>
+                  {item}
+                </option>
+              ))}
+              {/* <option value="18-25">18-25</option>
             <option value="26-35">26-35</option>
             <option value="36+">36+</option> */}
-          </Input>
-        </label>
+            </Input>
+          </label>
 
-        <button
-          type="submit"
-          // disabled={!agreed}
-        >
-          Sign up as
-          {/* {login} */}
-        </button>
-      </Form>
-    </Formik>
+          <button
+            type="submit"
+            // disabled={!agreed}
+          >
+            Sign up as
+            {/* {login} */}
+          </button>
+        </Form>
+      </Formik>
+    </>
   );
 };
 
