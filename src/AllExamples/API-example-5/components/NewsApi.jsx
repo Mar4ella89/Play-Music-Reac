@@ -3,6 +3,8 @@ import axios from 'axios';
 import api from './services/api';
 import ArticleList from './ArticleList';
 
+import GoBackButton from 'components/generic/GoBackButton/GoBackButton';
+
 axios.defaults.baseURL = 'https://hn.algolia.com/api/v1';
 
 class NewsApi extends Component {
@@ -40,6 +42,7 @@ class NewsApi extends Component {
     const { articles, isLoading, error } = this.state;
     return (
       <div>
+        <GoBackButton path={'/examples'} />
         <h1>News API</h1>
         {error && <p>Whoops, something went wrong: {error.message}</p>}
         {isLoading && <p>Loading...</p>}

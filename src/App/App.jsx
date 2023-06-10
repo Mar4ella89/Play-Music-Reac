@@ -22,6 +22,10 @@ const Counter = lazy(() =>
   import('AllExamples/Counter-example-3/components/Counter')
 );
 const SignUpForm = lazy(() => import('AllExamples/Form-example-4/SignUpForm'));
+const NewsApi = lazy(() =>
+  import('AllExamples/API-example-5/components/NewsApi')
+);
+
 const Hooks = lazy(() => import('AllExamples/Hook-example-6/Hooks'));
 
 // import Product from '../Products-example-1/components/Products/Product';
@@ -76,6 +80,18 @@ const Example = () => {
         return (
           <Container>
             <SignUpForm />
+          </Container>
+        );
+      case 'ex5':
+        return (
+          <Container>
+            <NewsApi />
+          </Container>
+        );
+      case 'ex6':
+        return (
+          <Container>
+            <Hooks />
           </Container>
         );
 
