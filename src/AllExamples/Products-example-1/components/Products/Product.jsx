@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import GoBackButton from 'components/generic/GoBackButton/GoBackButton';
+
 import css from './Product.module.css';
 
 const defaultImage =
@@ -8,29 +10,32 @@ const defaultImage =
 
 const Product = ({ allFood }) => {
   return (
-    <ul className={css.cardWrapper}>
-      {allFood.map(({ imgUrl = defaultImage, name, price, quantity, id }) => (
-        <li key={id} className={css.card}>
-          <div>
-            <div className={css.imgWrapper}>
-              <img
-                src={imgUrl ?? defaultImage}
-                alt={name}
-                width="300"
-                height="170"
-                className={css.img}
-              />
+    <>
+      <GoBackButton path={'/examples'} />
+      <ul className={css.cardWrapper}>
+        {allFood.map(({ imgUrl = defaultImage, name, price, quantity, id }) => (
+          <li key={id} className={css.card}>
+            <div>
+              <div className={css.imgWrapper}>
+                <img
+                  src={imgUrl ?? defaultImage}
+                  alt={name}
+                  width="300"
+                  height="170"
+                  className={css.img}
+                />
+              </div>
+              <div className={css.details}>
+                <h2>{name}</h2>
+                <p>Price: {price}$</p>
+                <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
+                <button type="button">Add to cart</button>
+              </div>
             </div>
-            <div className={css.details}>
-              <h2>{name}</h2>
-              <p>Price: {price}$</p>
-              <h2>Quantity: {quantity < 20 ? 'Few left' : 'In stock'}</h2>
-              <button type="button">Add to cart</button>
-            </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 
