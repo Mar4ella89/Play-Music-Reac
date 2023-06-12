@@ -20,11 +20,13 @@ const Hooks = () => {
   return (
     <div>
       <GoBackButton path={'/examples'} />
+
       <h2 className={css.title}>Example 1</h2>
       <p>You clicked {value} times</p>
       <button className={css.button} onClick={() => setValue(value + 1)}>
         Click me
       </button>
+
       <h2 className={css.title}>Example 2</h2>
       <button className={css.button} onClick={() => setValue1(value1 + 1)}>
         {value1}
