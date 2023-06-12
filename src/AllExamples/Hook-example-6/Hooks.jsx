@@ -10,6 +10,7 @@ const Hooks = () => {
 
   useEffect(() => {
     document.title = `You clicked ${value} times`;
+    console.log(value);
   });
 
   useEffect(() => {
