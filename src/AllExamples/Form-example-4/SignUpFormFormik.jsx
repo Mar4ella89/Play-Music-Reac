@@ -1,7 +1,7 @@
 import React from 'react';
-// import { nanoid } from 'nanoid';
+
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-// import { object, string, number } from 'yup';
+
 import * as yup from 'yup';
 import styled from '@emotion/styled';
 
@@ -57,7 +57,6 @@ const SignUpFormFormik = () => {
                 type="text"
                 placeholder="Enter login"
                 name="login"
-                // value={login}
               />
               <ErrorMessage name="login" component="div" />
             </label>
@@ -70,7 +69,6 @@ const SignUpFormFormik = () => {
               type="text"
               placeholder="Enter email"
               name="email"
-              // value={email}
             />
             <ErrorMessage name="email" component="div" />
           </label>
@@ -82,19 +80,13 @@ const SignUpFormFormik = () => {
               type="text"
               placeholder="Enter password"
               name="password"
-              // value={password}
             />
             <ErrorMessage name="password" component="div" />
           </label>
           <label className={css.lable}>
             <span className={css.fieldName}>Agree to terms</span>
 
-            <Field
-              className={css.field}
-              type="checkbox"
-              name="agreed"
-              // checked={agreed}
-            />
+            <Field className={css.field} type="checkbox" name="agreed" />
           </label>
 
           <section>
@@ -121,11 +113,7 @@ const SignUpFormFormik = () => {
 
           <label className={css.lable}>
             Choose your age
-            <Input
-              as="select"
-              name="age"
-              // value={initialValues.age}
-            >
+            <Input as="select" name="age">
               <option value="" disabled>
                 Select your age
               </option>
@@ -134,57 +122,14 @@ const SignUpFormFormik = () => {
                   {item}
                 </option>
               ))}
-              {/* <option value="18-25">18-25</option>
-            <option value="26-35">26-35</option>
-            <option value="36+">36+</option> */}
             </Input>
           </label>
 
-          <button
-            type="submit"
-            // disabled={!agreed}
-          >
-            Sign up as
-            {/* {login} */}
-          </button>
+          <button type="submit">Sign up as</button>
         </Form>
       </Formik>
     </>
   );
 };
-
-// state = {
-//   ...INITIAL_STATE,
-// };
-
-// loginInputId = nanoid();
-
-// // Отвечает за обновление состояния
-// handleChange = e => {
-//   const { name, value, type, checked } = e.target;
-//   // Если тип элемента checkbox, берем значение checked,
-//   // в противном случае value
-//   setState({ [name]: type === 'checkbox' ? checked : value });
-// };
-
-// // Вызывается при отправке формы
-// handleSubmit = evt => {
-//   const { login, email, password, agreed, age } = this.state;
-//   evt.preventDefault();
-//   console.log(
-//     `Login: ${login}, Email: ${email}, Password: ${password}, Agreed: ${agreed}, Age: ${age}`
-//   );
-
-//   // Проп который передается форме для вызова при сабмите
-//   this.props.onSubmit({ ...this.state });
-//   this.reset();
-// };
-
-// reset = () => {
-//   this.setState({ ...INITIAL_STATE });
-// };
-
-// render() {
-//   const { login, email, password, agreed, gender, age } = this.state;
 
 export default SignUpFormFormik;

@@ -28,16 +28,6 @@ class NewsApi extends Component {
     }
   }
 
-  //     try {
-  //       const articles = api.fetchArticlesWithQuery('react');
-  //       this.setState({ articles });
-  //     } catch (error) {
-  //       this.setState({ error });
-  //     } finally {
-  //       this.setState({ isLoading: false });
-  //     }
-  //   }
-
   render() {
     const { articles, isLoading, error } = this.state;
     return (
