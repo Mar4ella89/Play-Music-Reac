@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 
 import GoBackButton from 'components/generic/GoBackButton/GoBackButton';
+import { useToggle } from './hooks/useToggle/useToggle';
 
 import css from './Hooks.module.css';
 
 const Hooks = () => {
   const [value, setValue] = useState(0);
   const [value1, setValue1] = useState(0);
+  const { isOpen, open, close, toggle } = useToggle();
 
   useEffect(() => {
     document.title = `You clicked ${value} times`;
@@ -32,6 +34,18 @@ const Hooks = () => {
       <button className={css.button} onClick={() => setValue1(value1 + 1)}>
         {value1}
       </button>
+
+      <h2 className={css.title}>Example 3</h2>
+      <button className={css.button} onClick={open}>
+        Open
+      </button>
+      <button className={css.button} onClick={close}>
+        Close
+      </button>
+      <button className={css.button} onClick={toggle}>
+        Toggle
+      </button>
+      {isOpen && <div>Text visible</div>}
     </div>
   );
 };
