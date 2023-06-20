@@ -53,7 +53,7 @@ const Hooks = () => {
             Text visible
           </div>
         )}
-        <h2 className={css.title}>Example 4</h2>
+        <h2 className={css.title}>Example 4 (useContext)</h2>
         <UserMenu />
       </div>
     </UserProvider>

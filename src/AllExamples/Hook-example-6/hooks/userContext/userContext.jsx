@@ -8,18 +8,18 @@ export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState(null);
 
-  const loginIn = () => {
+  const logIn = () => {
     setIsLoggedIn(true);
     setUsername('Marat');
   };
 
-  const loginOut = () => {
+  const logOut = () => {
     setIsLoggedIn(false);
     setUsername(null);
   };
 
   return (
-    <UserContext.Provider value={{ loginIn, loginOut, isLoggedIn, username }}>
+    <UserContext.Provider value={{ logIn, logOut, isLoggedIn, username }}>
       {children}
     </UserContext.Provider>
   );
