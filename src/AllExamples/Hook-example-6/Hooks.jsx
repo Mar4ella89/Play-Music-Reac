@@ -5,6 +5,7 @@ import { useToggle } from './hooks/useToggle/useToggle';
 import { UserProvider } from './hooks/userContext/userContext';
 import { UserMenu } from './UserMenu/UserMenu';
 import Player from './Player/Player';
+import UseMemoExample from './useMemoExample/UseMemoExample';
 
 import css from './Hooks.module.css';
 
@@ -75,7 +76,9 @@ const Hooks = () => {
           Button with ref
         </button>
         <h2 className={css.title}>Example 6 (Player)</h2>
-        <Player source="http://media.w3.org/2010/05/sintel/trailer.mp4" />;
+        <Player source="http://media.w3.org/2010/05/sintel/trailer.mp4" />
+        <h2 className={css.title}>Example 7 (useMemo)</h2>
+        <UseMemoExample />
       </div>
     </UserProvider>
   );
