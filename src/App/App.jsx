@@ -24,6 +24,9 @@ const NewsApi = lazy(() =>
 );
 
 const Hooks = lazy(() => import('AllExamples/Hook-example-6/Hooks'));
+const RouteExample = lazy(() =>
+  import('AllExamples/Route-example-7/components/RouteExample')
+);
 
 const examples = [
   { id: 'ex1', title: 'Example-1 Products' },
@@ -32,7 +35,7 @@ const examples = [
   { id: 'ex4', title: 'Example-4 Form and Formik' },
   { id: 'ex5', title: 'Example-5 API' },
   { id: 'ex6', title: 'Example-6 Hooks' },
-  { id: 'ex7', title: 'Example-7' },
+  { id: 'ex7', title: 'Example-7 Route' },
   { id: 'ex8', title: 'Example-8' },
   { id: 'ex9', title: 'Example-9' },
   { id: 'ex10', title: 'Example-10' },
@@ -79,6 +82,12 @@ const Example = () => {
             <Hooks />
           </Container>
         );
+      case 'ex7':
+        return (
+          <Container>
+            <RouteExample />
+          </Container>
+        );
 
       default:
         return null;
@@ -98,10 +107,10 @@ export const App = () => (
           path="/examples"
           element={<ExamplesPage examples={examples} />}
         />
-        <Route path="/examples/:ex" element={<Example />}></Route>
+        <Route path="/examples/:ex/*" element={<Example />}></Route>
       </Route>
 
-      <Route path="*" element={<HomePage />} />
+      {/* <Route path="*" element={<HomePage />} /> */}
     </Routes>
   </Suspense>
 );
