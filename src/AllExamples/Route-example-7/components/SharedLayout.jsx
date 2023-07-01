@@ -12,11 +12,11 @@ export const SharedLayout = () => {
           GoMerch Store
         </Logo>
         <nav>
-          <Link to="/" end>
+          <Link to="/examples/ex7" end>
             Home
           </Link>
-          <Link to="/about">About</Link>
-          <Link to="/products">Products</Link>
+          <Link to="/examples/ex7/about">About</Link>
+          <Link to="/examples/ex7/products">Products</Link>
         </nav>
       </Header>
       <Outlet />
