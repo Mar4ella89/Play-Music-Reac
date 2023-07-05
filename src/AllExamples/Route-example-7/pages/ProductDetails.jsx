@@ -6,6 +6,9 @@ export const ProductDetails = () => {
   const { id } = useParams();
   const product = getProductById(id);
   const location = useLocation();
+  console.log(location);
+  console.log(location.state);
+  // console.log(location.state.from);
   const backLinkHref = location.state?.from ?? '/examples/ex7/products';
 
   return (
