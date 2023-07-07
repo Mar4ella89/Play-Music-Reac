@@ -28,6 +28,10 @@ const RouteExample = lazy(() =>
   import('AllExamples/Route-example-7/components/RouteExample')
 );
 
+const ReduxExample = lazy(() =>
+  import('AllExamples/Redux-example-8/ReduxExample')
+);
+
 const examples = [
   { id: 'ex1', title: 'Example-1 Products' },
   { id: 'ex2', title: 'Example-2 Event Board' },
@@ -36,7 +40,7 @@ const examples = [
   { id: 'ex5', title: 'Example-5 API' },
   { id: 'ex6', title: 'Example-6 Hooks' },
   { id: 'ex7', title: 'Example-7 Route' },
-  { id: 'ex8', title: 'Example-8' },
+  { id: 'ex8', title: 'Example-8 Redux' },
   { id: 'ex9', title: 'Example-9' },
   { id: 'ex10', title: 'Example-10' },
 ];
@@ -86,6 +90,12 @@ const Example = () => {
         return (
           <Container>
             <RouteExample />
+          </Container>
+        );
+      case 'ex8':
+        return (
+          <Container>
+            <ReduxExample />
           </Container>
         );
 
