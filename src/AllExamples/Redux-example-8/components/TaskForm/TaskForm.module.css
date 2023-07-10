@@ -7,6 +7,8 @@
     flex-grow: 1;
     padding: 8px;
     font: inherit;
+    border: 1px solid grey;
+    border-radius: 4px;
 }
 
 .field:focus {
