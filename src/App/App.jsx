@@ -29,7 +29,7 @@ const RouteExample = lazy(() =>
 );
 
 const ReduxExample = lazy(() =>
-  import('AllExamples/Redux-example-8/components/ReduxExample')
+  import('AllExamples/Redux-example-8/ReduxExample')
 );
 
 const examples = [
