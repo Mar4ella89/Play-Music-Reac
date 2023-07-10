@@ -1,4 +1,4 @@
-import { Button } from 'components/Button/Button';
+import { Button } from '../Button/Button';
 import css from './TaskForm.module.css';
 
 export const TaskForm = () => {
