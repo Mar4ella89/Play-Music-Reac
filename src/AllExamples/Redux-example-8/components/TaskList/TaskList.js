@@ -26,9 +26,9 @@ export const TaskList = () => {
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
 
   return (
-    <ul>
+    <ul className={css.list}>
       {visibleTasks.map(task => (
-        <li key={task.id}>
+        <li key={task.id} className={css.listItem}>
           <Task task={task} />
         </li>
       ))}
