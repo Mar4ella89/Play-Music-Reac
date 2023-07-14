@@ -18,7 +18,7 @@ export const rootReducer = (state = initialState, action) => {
   // Редюсер различает экшены по значению свойства type
   switch (action.type) {
     // В зависимости от типа экшена будет выполняться разная логика
-    case 'tasks/addTask': {
+    case 'tasks/addTask':
       // Нужно вернуть новый объект состояния
       return {
         // в котором есть все данные существующего состояния
@@ -31,7 +31,13 @@ export const rootReducer = (state = initialState, action) => {
           action.payload,
         ],
       };
-    }
+
+    case 'tasks/deleteTask':
+      return {
+        ...state,
+        tasks: state.tasks.filter(task => task.id !== action.payload),
+      };
+
     default:
       // Каждый редюсер получает все экшены отправленные в стор.
       // Если редюсер не должен обрабатывать какой-то тип экшена,
