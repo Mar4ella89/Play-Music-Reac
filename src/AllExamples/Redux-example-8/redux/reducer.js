@@ -38,6 +38,29 @@ export const rootReducer = (state = initialState, action) => {
         tasks: state.tasks.filter(task => task.id !== action.payload),
       };
 
+    case 'tasks/toggleCompleted':
+      return {
+        ...state,
+        tasks: state.tasks.map(task => {
+          if (task.id !== action.payload) {
+            return task;
+          }
+          return {
+            ...task,
+            complited: !task.completed,
+          };
+        }),
+      };
+
+    case 'setStatusFilter':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          status: action.payload,
+        },
+      };
+
     default:
       // Каждый редюсер получает все экшены отправленные в стор.
       // Если редюсер не должен обрабатывать какой-то тип экшена,
