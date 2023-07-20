@@ -35,6 +35,11 @@ const ReduxExample = lazy(() =>
 const ReduxToolkitExample = lazy(() =>
   import('AllExamples/Redux-Toolkit-example-9/ReduxToolkitExample')
 );
+
+const ReduxAsyncExample = lazy(() =>
+  import('AllExamples/Redux-Async-example-10/ReduxAsyncExample')
+);
+
 const examples = [
   { id: 'ex1', title: 'Example-1 Products' },
   { id: 'ex2', title: 'Example-2 Event Board' },
@@ -45,7 +50,7 @@ const examples = [
   { id: 'ex7', title: 'Example-7 Route' },
   { id: 'ex8', title: 'Example-8 Redux' },
   { id: 'ex9', title: 'Example-9 Redux-Toolkit' },
-  { id: 'ex10', title: 'Example-10' },
+  { id: 'ex10', title: 'Example-10 Async Redux' },
 ];
 
 const Example = () => {
@@ -105,6 +110,12 @@ const Example = () => {
         return (
           <Container>
             <ReduxToolkitExample />
+          </Container>
+        );
+      case 'ex10':
+        return (
+          <Container>
+            <ReduxAsyncExample />
           </Container>
         );
 
