@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
 
+import { fetchTasks } from './operations';
+
 // const tasksInitialState = [
 //   { id: 0, text: 'Learn HTML and CSS', completed: true },
 //   { id: 1, text: 'Get good at JavaScript', completed: true },
@@ -16,24 +18,18 @@ const tasksSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {
-    fetchingInProgress: {
-      reducer(state) {
-        state.isLoading = true;
-      },
+  extraReducers: {
+    [fetchTasks.pending](state) {
+      state.isLoading = true;
     },
-    fetchingSuccess: {
-      reducer(state, action) {
-        state.isLoading = false;
-        state.error = null;
-        state.items = action.payload;
-      },
-      fetchingError: {
-        reducer(state, action) {
-          state.isLoading = false;
-          state.error = action.payload;
-        },
-      },
+    [fetchTasks.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items = action.payload;
+    },
+    [fetchTasks.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
     },
     addTask: {
       reducer(state, action) {
@@ -68,13 +64,6 @@ const tasksSlice = createSlice({
   },
 });
 
-export const {
-  fetchingInProgress,
-  fetchingSuccess,
-  fetchingError,
-  addTask,
-  deleteTask,
-  toggleCompleted,
-} = tasksSlice.actions;
+export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions;
 
 export const tasksReducer = tasksSlice.reducer;
