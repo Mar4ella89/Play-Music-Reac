@@ -76,4 +76,5 @@ export const {
   deleteTask,
   toggleCompleted,
 } = tasksSlice.actions;
+
 export const tasksReducer = tasksSlice.reducer;

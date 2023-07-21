@@ -18,14 +18,18 @@ const App = () => {
     dispatch(fetchTasks());
   }, [dispatch]);
 
+  console.log(items);
   return (
     <Layout>
-      <AppBar />
+      {isLoading && <p>Loading tasks...</p>}
+      {error && <p>{error}</p>}
+      <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
+      {/* <AppBar />
       <TaskForm />
       {isLoading && <p>Loading tasks...</p>}
       {error && <p>{error}</p>}
       <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
-      <TaskList />
+      <TaskList /> */}
     </Layout>
   );
 };
