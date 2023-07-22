@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
 
-import { fetchTasks } from './operations';
+import { fetchTasks, addTask, deleteTask } from './operations';
 
 // const tasksInitialState = [
 //   { id: 0, text: 'Learn HTML and CSS', completed: true },
@@ -31,26 +31,28 @@ const tasksSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-    addTask: {
-      reducer(state, action) {
-        state.push(action.payload);
-      },
-      prepare(text) {
-        return {
-          payload: {
-            id: nanoid(),
-            text,
-            completed: false,
-          },
-        };
-      },
+    [addTask.pending](state) {
+      state.isLoading = true;
     },
-    deleteTask: {
-      reducer(state, action) {
-        const index = state.findIndex(task => task.id === action.payload);
-        state.splice(index, 1);
-      },
+    [addTask.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items.push(action.payload);
     },
+    [addTask.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    [deleteTask.pending](state) {
+      state.isLoading = true;
+    },
+    [deleteTask.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(task => task.id === action.payload);
+      state.items.splice(index, 1);
+    },
+
     toggleCompleted: {
       reducer(state, action) {
         for (const task of state) {
@@ -64,6 +66,6 @@ const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions;
+export const { toggleCompleted } = tasksSlice.actions;
 
 export const tasksReducer = tasksSlice.reducer;
