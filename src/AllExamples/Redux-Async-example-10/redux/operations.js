@@ -1,12 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// import {
-//   fetchingInProgress,
-//   fetchingSuccess,
-//   fetchingError,
-// } from '../redux/tasksSlice';
-
 axios.defaults.baseURL = 'https://62584f320c918296a49543e7.mockapi.io';
 
 export const fetchTasks = createAsyncThunk(
@@ -43,6 +37,20 @@ export const deleteTask = createAsyncThunk(
   async (taskId, thunkAPI) => {
     try {
       const response = await axios.delete(`/tasks/${taskId}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const toggleCompleted = createAsyncThunk(
+  'task/toggleCompleted',
+  async (task, thunkAPI) => {
+    try {
+      const response = await axios.put(`/tasks/${task.id}`, {
+        comleted: !task.completed,
+      });
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
