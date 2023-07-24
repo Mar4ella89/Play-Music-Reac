@@ -23,9 +23,8 @@ const App = () => {
     <Layout>
       <AppBar />
       <TaskForm />
-      {isLoading && !error && <b>Request in progress...</b>}
-      {error && <p>{error}</p>}
-      <TaskList />
+      {(isLoading && !error && <b>Request in progress...</b>) ||
+        (error && <p>{error}</p>) || <TaskList />}
     </Layout>
   );
 };
