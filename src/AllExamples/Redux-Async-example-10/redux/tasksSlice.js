@@ -2,6 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { fetchTasks, addTask, deleteTask, toggleCompleted } from './operations';
 
+const handlePending = state => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
+
 const tasksSlice = createSlice({
   name: 'tasks',
   initialState: {
@@ -10,46 +19,29 @@ const tasksSlice = createSlice({
     error: null,
   },
   extraReducers: {
-    [fetchTasks.pending](state) {
-      state.isLoading = true;
-    },
+    [fetchTasks.pending]: handlePending,
     [fetchTasks.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
     },
-    [fetchTasks.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    [addTask.pending](state) {
-      state.isLoading = true;
-    },
+    [fetchTasks.rejected]: handleRejected,
+    [addTask.pending]: handlePending,
     [addTask.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
     },
-    [addTask.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    [deleteTask.pending](state) {
-      state.isLoading = true;
-    },
+    [addTask.rejected]: handleRejected,
+    [deleteTask.pending]: handlePending,
     [deleteTask.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       const index = state.items.findIndex(task => task.id === action.payload);
       state.items.splice(index, 1);
     },
-    [deleteTask.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    [toggleCompleted.pending](state) {
-      state.isLoading = true;
-    },
+    [deleteTask.rejected]: handleRejected,
+    [toggleCompleted.pending]: handlePending,
     [toggleCompleted.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
@@ -58,10 +50,7 @@ const tasksSlice = createSlice({
       );
       state.items.splice(index, 1, action.payload);
     },
-    [toggleCompleted.rejected](state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+    [toggleCompleted.rejected]: handleRejected,
   },
 });
 
