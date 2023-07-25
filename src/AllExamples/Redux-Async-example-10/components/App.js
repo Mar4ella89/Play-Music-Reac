@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchTasks } from '../redux/operations';
-import { getIsLoading, getError } from '../redux/selectors';
+import { selectIsLoading, selectError } from '../redux/selectors';
 
 import { Layout } from './Layout/Layout';
 import { AppBar } from './AppBar/AppBar';
@@ -12,8 +12,8 @@ import { TaskList } from './TaskList/TaskList';
 const App = () => {
   const dispatch = useDispatch();
   // Получаем части состояния
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   // Вызываем операцию
   useEffect(() => {
     dispatch(fetchTasks());

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setStatusFilter } from '../../redux/filtersSlice';
-import { getStatusFilter } from '../../redux/selectors';
+import { selectStatusFilter } from '../../redux/selectors';
 import { statusFilters } from '../../redux/constants';
 import { Button } from '../Button/Button';
 
@@ -11,7 +11,7 @@ export const StatusFilter = () => {
   const dispatch = useDispatch();
 
   // Получаем значение фильтра из состояния Redux
-  const filter = useSelector(getStatusFilter);
+  const filter = useSelector(selectStatusFilter);
 
   // Вызываем генератор экшена и передаём значение фильтра
   // Отправляем результат - экшен изменения фильтра
