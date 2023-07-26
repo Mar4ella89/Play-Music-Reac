@@ -13,7 +13,6 @@ export const selectStatusFilter = state => state.filters.status;
 export const selectVisibleTasks = createSelector(
   [selectTasks, selectStatusFilter],
   (tasks, statusFilter) => {
-    console.log('Calculating visible tasks. Now memoized!');
     switch (statusFilter) {
       case statusFilters.active:
         return tasks.filter(task => !task.completed);
