@@ -3,7 +3,7 @@ import { store } from './redux/store';
 
 import App from './components/App.js';
 
-const ReduxAsyncExample = () => {
+const ReduxAuthExample = () => {
   return (
     <Provider store={store}>
       <App />
@@ -11,4 +11,4 @@ const ReduxAsyncExample = () => {
   );
 };
 
-export default ReduxAsyncExample;
+export default ReduxAuthExample;
