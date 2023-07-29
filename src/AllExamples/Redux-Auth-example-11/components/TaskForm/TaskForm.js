@@ -13,7 +13,11 @@ export const TaskForm = () => {
     const form = event.target;
     // Вызываем генератор экшена и передаем текст задачи для поля payload
     // Отправляем результат - экшен создания задачи
-    dispatch(addTask(form.elements.text.value));
+    const text = form.elements.text.value;
+    if (text !== '') {
+      dispatch(addTask(text));
+    }
+
     form.reset();
   };
 
