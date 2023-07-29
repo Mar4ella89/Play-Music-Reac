@@ -4,7 +4,7 @@ import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from '../../hooks';
 import css from './AppMainBar.module.css';
 
-export const AppBar = () => {
+export const AppMainBar = () => {
   const { isLoggedIn } = useAuth();
 
   return (
