@@ -6,7 +6,10 @@ import { useAuth } from '../hooks';
  * - Otherwise render <Navigate> to redirectTo
  */
 
-export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
+export const PrivateRoute = ({
+  component: Component,
+  redirectTo = '/examples/ex11/',
+}) => {
   const { isLoggedIn, isRefreshing } = useAuth();
   const shouldRedirect = !isLoggedIn && !isRefreshing;
 

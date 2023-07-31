@@ -18,7 +18,8 @@ export default function Tasks() {
   }, [dispatch]);
 
   return (
-    <Layout>
+    <>
+      {/* <Layout> */}
       <Helmet>
         <title>Your tasks</title>
       </Helmet>
@@ -27,6 +28,7 @@ export default function Tasks() {
       <TaskForm />
       <div>{isLoading && 'Request in progress...'}</div>
       <TaskList />
-    </Layout>
+      {/* </Layout> */}
+    </>
   );
 }
