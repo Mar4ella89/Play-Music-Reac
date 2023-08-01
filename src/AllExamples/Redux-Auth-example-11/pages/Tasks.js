@@ -19,16 +19,13 @@ export default function Tasks() {
 
   return (
     <>
-      {/* <Layout> */}
       <Helmet>
         <title>Your tasks</title>
       </Helmet>
       <AppBar />
-      <StatusFilter />
       <TaskForm />
       <div>{isLoading && 'Request in progress...'}</div>
       <TaskList />
-      {/* </Layout> */}
     </>
   );
 }
