@@ -7,8 +7,6 @@ import { Button } from '../Button/Button';
 
 import css from './StatusFilter.module.css';
 
-console.log(selectStatusFilter);
-
 export const StatusFilter = () => {
   const dispatch = useDispatch();
 
