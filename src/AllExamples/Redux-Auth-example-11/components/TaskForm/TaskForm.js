@@ -16,9 +16,11 @@ export const TaskForm = () => {
     const text = form.elements.text.value;
     if (text !== '') {
       dispatch(addTask(text));
+      form.reset();
+      return;
     }
 
-    form.reset();
+    alert('Task cannot be empty. Enter some text!');
   };
 
   return (

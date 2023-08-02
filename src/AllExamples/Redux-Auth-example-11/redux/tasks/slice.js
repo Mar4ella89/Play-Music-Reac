@@ -33,6 +33,7 @@ const tasksSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
+        console.log(action.payload);
       })
       .addCase(addTask.rejected, handleRejected)
       .addCase(deleteTask.pending, handlePending)
