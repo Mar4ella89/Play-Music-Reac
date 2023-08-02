@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { logOut } from '../auth/operations';
 import { fetchTasks, addTask, deleteTask, toggleCompleted } from './operations';
 
 const handlePending = state => {
@@ -53,7 +54,12 @@ const tasksSlice = createSlice({
         );
         state.items.splice(index, 1, action.payload);
       })
-      .addCase(toggleCompleted.rejected, handleRejected);
+      .addCase(toggleCompleted.rejected, handleRejected)
+      .addCase(logOut.fulfilled, state => {
+        state.items = [];
+        state.error = null;
+        state.isLoading = false;
+      });
   },
 });
 
