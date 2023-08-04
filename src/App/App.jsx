@@ -44,6 +44,10 @@ const ReduxAuthExample = lazy(() =>
   import('AllExamples/Redux-Auth-example-11/ReduxAuthExample')
 );
 
+const TypeScriptExample = lazy(() =>
+  import('AllExamples/TypeScript-example/TypeScriptExample')
+);
+
 const examples = [
   { id: 'ex1', title: 'Example-1 Products' },
   { id: 'ex2', title: 'Example-2 Event Board' },
@@ -56,6 +60,7 @@ const examples = [
   { id: 'ex9', title: 'Example-9 Redux-Toolkit' },
   { id: 'ex10', title: 'Example-10 Async Redux' },
   { id: 'ex11', title: 'Example-11 Redux Authentication' },
+  { id: 'ex12', title: 'Example-12 TypeScript Example' },
 ];
 
 const Example = () => {
@@ -127,6 +132,12 @@ const Example = () => {
         return (
           <Container>
             <ReduxAuthExample />
+          </Container>
+        );
+      case 'ex12':
+        return (
+          <Container>
+            <TypeScriptExample />
           </Container>
         );
 
